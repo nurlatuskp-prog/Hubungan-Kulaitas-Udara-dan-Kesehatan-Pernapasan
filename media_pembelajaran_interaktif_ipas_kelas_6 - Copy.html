@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPAS Kelas 6 - Kualitas Udara & Kesehatan Pernapasan</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts Inter & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                        },
+                        skybrand: {
+                            50: '#f0f9ff',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom scrollbar and animations */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #94a3b8;
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #64748b;
+        }
+        .pulse-subtle {
+            animation: pulseSubtle 3s infinite;
+        }
+        @keyframes pulseSubtle {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.95; transform: scale(1.02); }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-col">
+
+    <!-- Sticky Navigation Header -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500 to-teal-400 flex items-center justify-center text-white shadow-md shadow-emerald-200">
+                    <i class="fa-solid fa-wind text-xl"></i>
+                </div>
+                <div>
+                    <span class="text-xs font-bold text-emerald-600 uppercase tracking-widest block">IPAS Kelas 6 • Fase C</span>
+                    <h1 class="text-base sm:text-lg font-extrabold text-slate-900 leading-tight">Napas Bersih, Paru Sehat!</h1>
+                </div>
+            </div>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center gap-1 lg:gap-2 text-sm font-semibold text-slate-600">
+                <a href="#tujuan" class="px-3 py-2 rounded-lg hover:bg-emerald-50 hover:text-emerald-600 transition-colors">Tujuan</a>
+                <a href="#konsep" class="px-3 py-2 rounded-lg hover:bg-emerald-50 hover:text-emerald-600 transition-colors">Konsep Udara</a>
+                <a href="#polutan" class="px-3 py-2 rounded-lg hover:bg-emerald-50 hover:text-emerald-600 transition-colors">Polutan & Gangguan</a>
+                <a href="#simulasi" class="px-3 py-2 rounded-lg hover:bg-emerald-50 hover:text-emerald-600 transition-colors">Simulasi & Lab</a>
+                <a href="#observasi" class="px-3 py-2 rounded-lg hover:bg-emerald-50 hover:text-emerald-600 transition-colors">Cek Udara</a>
+                <a href="#mitigasi" class="px-3 py-2 rounded-lg hover:bg-emerald-50 hover:text-emerald-600 transition-colors">Aksi Mitigasi</a>
+            </nav>
+
+            <a href="#kuis" class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs sm:text-sm font-bold px-4 py-2 rounded-xl shadow-md shadow-emerald-200 transition-all hover:scale-105 active:scale-95">
+                <i class="fa-solid fa-gamepad"></i>
+                <span>Kuis Interaktif</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Banner Section -->
+    <section class="relative bg-gradient-to-b from-teal-500 via-emerald-600 to-teal-700 text-white pt-12 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <div class="absolute -top-24 -right-24 w-96 h-96 bg-emerald-300/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-teal-300/20 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-5xl mx-auto text-center relative z-10">
+            <span class="inline-block bg-white/20 backdrop-blur-md text-white text-xs sm:text-sm font-bold px-4 py-1.5 rounded-full mb-4 border border-white/30">
+                <i class="fa-solid fa-sparkles text-amber-300 mr-1.5"></i> Modul Pembelajaran Sains Interaktif
+            </span>
+            <h1 class="text-3xl sm:text-5xl font-black tracking-tight mb-4 leading-tight">
+                Hubungan Kualitas Udara & <br class="hidden sm:inline">Kesehatan Pernapasan
+            </h1>
+            <p class="text-emerald-100 text-base sm:text-xl max-w-3xl mx-auto mb-8 font-medium leading-relaxed">
+                Pelajari bagaimana kualitas udara di sekitarmu memengaruhi paru-paru, kenali berbagai sumber pencemaran, dan rumuskan tindakan nyata untuk menjaga udara tetap segar!
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#konsep" class="bg-white text-emerald-800 font-extrabold px-6 py-3.5 rounded-2xl shadow-lg hover:bg-emerald-50 transition-all hover:-translate-y-0.5 text-sm sm:text-base flex items-center gap-2">
+                    <i class="fa-solid fa-circle-play text-emerald-600"></i> Mulai Belajar
+                </a>
+                <a href="#simulasi" class="bg-emerald-800/60 backdrop-blur-md text-white border border-white/30 font-bold px-6 py-3.5 rounded-2xl hover:bg-emerald-800 transition-all text-sm sm:text-base flex items-center gap-2">
+                    <i class="fa-solid fa-flask text-teal-200"></i> Coba Laboratorium Udara
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tujuan Pembelajaran Section -->
+    <section id="tujuan" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 relative z-20 mb-16">
+        <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-100">
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-6 border-b border-slate-100 pb-4">
+                <div>
+                    <span class="text-xs font-extrabold text-emerald-600 uppercase tracking-widest">Capaian Pembelajaran</span>
+                    <h2 class="text-2xl font-black text-slate-900">Tujuan Pembelajaran Murid</h2>
+                </div>
+                <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1.5 rounded-xl flex items-center gap-1.5">
+                    <i class="fa-solid fa-bullseye"></i> 3 Indikator Utama
+                </span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200 hover:border-emerald-300 transition-all hover:shadow-md group">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500 text-white flex items-center justify-center font-black text-xl mb-4 group-hover:scale-110 transition-transform">
+                        1
+                    </div>
+                    <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider block mb-1">Mendeskripsikan</span>
+                    <h3 class="font-bold text-slate-900 text-base mb-2">Jenis Gangguan Pernapasan</h3>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                        Mampu menyebutkan dan menjelaskan berbagai gangguan pernapasan manusia akibat pencemaran udara berdasarkan studi literatur.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200 hover:border-sky-300 transition-all hover:shadow-md group">
+                    <div class="w-12 h-12 rounded-xl bg-sky-500 text-white flex items-center justify-center font-black text-xl mb-4 group-hover:scale-110 transition-transform">
+                        2
+                    </div>
+                    <span class="text-xs font-bold text-sky-600 uppercase tracking-wider block mb-1">Menganalisis</span>
+                    <h3 class="font-bold text-slate-900 text-base mb-2">Hubungan Kualitas Udara</h3>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                        Mampu menganalisis keterkaitan kritis antara tingkat kebersihan udara sekitar dengan dampak kesehatan organ tubuh secara mendalam.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200 hover:border-amber-300 transition-all hover:shadow-md group">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500 text-white flex items-center justify-center font-black text-xl mb-4 group-hover:scale-110 transition-transform">
+                        3
+                    </div>
+                    <span class="text-xs font-bold text-amber-600 uppercase tracking-wider block mb-1">Mengevaluasi</span>
+                    <h3 class="font-bold text-slate-900 text-base mb-2">Observasi & Mitigasi Empiris</h3>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                        Mampu mengevaluasi udara di lingkungan sekolah/rumah serta merumuskan langkah pencegahan dan perbaikan nyata secara mandiri.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section A & B: Apa itu Kualitas Udara & Pencemaran -->
+    <section id="konsep" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+        <div class="text-center mb-10">
+            <span class="bg-emerald-100 text-emerald-800 text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">Bagian A & B</span>
+            <h2 class="text-2xl sm:text-4xl font-black text-slate-900 mt-2">Mengenal Kualitas & Pencemaran Udara</h2>
+            <p class="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto mt-2">Udara yang kita hirup menentukan kesehatan paru-paru kita setiap detik.</p>
+        </div>
+
+        <!-- Interactive Tabs Comparison: Udara Bersih vs Tercemar -->
+        <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-md border border-slate-200 mb-12">
+            <h3 class="text-lg font-extrabold text-slate-900 mb-4 flex items-center gap-2">
+                <i class="fa-solid fa-code-compare text-emerald-600"></i> Perbandingan: Udara Bersih vs Udara Tercemar
+            </h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Clean Air Box -->
+                <div class="bg-gradient-to-br from-emerald-50 to-teal-50 border border-emerald-200 rounded-2xl p-6 relative overflow-hidden">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold text-lg">
+                            <i class="fa-solid fa-leaf"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-extrabold text-emerald-900 text-lg">Udara Relatif Bersih</h4>
+                            <span class="text-xs text-emerald-700 font-semibold">Kondisi Aman & Nyaman</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-2.5 text-xs sm:text-sm text-emerald-900 font-medium">
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-circle-check text-emerald-600"></i>
+                            <span>Sedikit debu dan asap buangan.</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-circle-check text-emerald-600"></i>
+                            <span>Tidak tercemar oleh zat kimia berbahaya.</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-circle-check text-emerald-600"></i>
+                            <span>Bebas dari bau menyengat atau menyesakkan.</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-circle-check text-emerald-600"></i>
+                            <span>Banyak terdapat pepohonan & sirkulasi udara baik.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Polluted Air Box -->
+                <div class="bg-gradient-to-br from-rose-50 to-amber-50 border border-rose-200 rounded-2xl p-6 relative overflow-hidden">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-full bg-rose-500 text-white flex items-center justify-center font-bold text-lg">
+                            <i class="fa-solid fa-smog"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-extrabold text-rose-900 text-lg">Udara Tercemar</h4>
+                            <span class="text-xs text-rose-700 font-semibold">Potensi Gangguan Kesehatan</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-2.5 text-xs sm:text-sm text-rose-900 font-medium">
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-triangle-exclamation text-rose-600"></i>
+                            <span>Terkontaminasi asap kendaraan & industri.</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-triangle-exclamation text-rose-600"></i>
+                            <span>Mengandung asap pembakaran sampah & rokok.</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-triangle-exclamation text-rose-600"></i>
+                            <span>Penuh dengan partikel debu halus (PM2.5).</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-triangle-exclamation text-rose-600"></i>
+                            <span>Dapat menurunkan fungsi paru-paru jika terhirup.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6 Sumber Utama Pencemaran Udara (Interactive Grid) -->
+        <div class="bg-slate-900 text-white rounded-3xl p-6 sm:p-8 shadow-xl">
+            <div class="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-4">
+                <div>
+                    <span class="text-xs font-bold text-amber-400 uppercase tracking-widest block">Identifikasi Masalah</span>
+                    <h3 class="text-xl sm:text-2xl font-black">6 Sumber Utama Pencemaran Udara</h3>
+                </div>
+                <span class="text-xs text-slate-400">Klik kartu untuk mempelajari contohnya</span>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <!-- Item 1 -->
+                <div class="bg-slate-800/80 hover:bg-slate-800 border border-slate-700 p-5 rounded-2xl transition-all cursor-pointer hover:border-amber-400 group">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-lg font-bold group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-car-side"></i>
+                        </div>
+                        <span class="text-[10px] bg-slate-700 text-slate-300 font-bold px-2 py-0.5 rounded-full">Buatan Manusia</span>
+                    </div>
+                    <h4 class="font-extrabold text-base mb-1 text-slate-100">1. Kendaraan</h4>
+                    <p class="text-xs text-slate-400 leading-relaxed">Emisi gas buang dan asap dari mobil, motor, serta transportasi jalan raya.</p>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="bg-slate-800/80 hover:bg-slate-800 border border-slate-700 p-5 rounded-2xl transition-all cursor-pointer hover:border-amber-400 group">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="w-10 h-10 rounded-xl bg-orange-500/20 text-orange-400 flex items-center justify-center text-lg font-bold group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-fire"></i>
+                        </div>
+                        <span class="text-[10px] bg-slate-700 text-slate-300 font-bold px-2 py-0.5 rounded-full">Rumah Tangga</span>
+                    </div>
+                    <h4 class="font-extrabold text-base mb-1 text-slate-100">2. Pembakaran Sampah</h4>
+                    <p class="text-xs text-slate-400 leading-relaxed">Asap dari pembakaran sampah plastik atau organik secara sembarangan di sekitar rumah.</p>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="bg-slate-800/80 hover:bg-slate-800 border border-slate-700 p-5 rounded-2xl transition-all cursor-pointer hover:border-amber-400 group">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="w-10 h-10 rounded-xl bg-rose-500/20 text-rose-400 flex items-center justify-center text-lg font-bold group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-industry"></i>
+                        </div>
+                        <span class="text-[10px] bg-slate-700 text-slate-300 font-bold px-2 py-0.5 rounded-full">Industri</span>
+                    </div>
+                    <h4 class="font-extrabold text-base mb-1 text-slate-100">3. Pabrik & Industri</h4>
+                    <p class="text-xs text-slate-400 leading-relaxed">Cerobong pembuangan asap dan emisi zat kimia berbahaya dari proses manufaktur.</p>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="bg-slate-800/80 hover:bg-slate-800 border border-slate-700 p-5 rounded-2xl transition-all cursor-pointer hover:border-amber-400 group">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="w-10 h-10 rounded-xl bg-red-500/20 text-red-400 flex items-center justify-center text-lg font-bold group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-smoking"></i>
+                        </div>
+                        <span class="text-[10px] bg-slate-700 text-slate-300 font-bold px-2 py-0.5 rounded-full">Gaya Hidup</span>
+                    </div>
+                    <h4 class="font-extrabold text-base mb-1 text-slate-100">4. Asap Rokok</h4>
+                    <p class="text-xs text-slate-400 leading-relaxed">Racun racun kimia yang berbahaya bagi perokok aktif maupun perokok pasif di sekitarnya.</p>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="bg-slate-800/80 hover:bg-slate-800 border border-slate-700 p-5 rounded-2xl transition-all cursor-pointer hover:border-amber-400 group">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="w-10 h-10 rounded-xl bg-yellow-500/20 text-yellow-400 flex items-center justify-center text-lg font-bold group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-trowel-bricks"></i>
+                        </div>
+                        <span class="text-[10px] bg-slate-700 text-slate-300 font-bold px-2 py-0.5 rounded-full">Konstruksi</span>
+                    </div>
+                    <h4 class="font-extrabold text-base mb-1 text-slate-100">5. Proyek Pembangunan</h4>
+                    <p class="text-xs text-slate-400 leading-relaxed">Semburan debu semen, pasir, dan material fisik dari kegiatan penggalian serta konstruksi.</p>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="bg-slate-800/80 hover:bg-slate-800 border border-slate-700 p-5 rounded-2xl transition-all cursor-pointer hover:border-amber-400 group">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-lg font-bold group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-volcano"></i>
+                        </div>
+                        <span class="text-[10px] bg-slate-700 text-slate-300 font-bold px-2 py-0.5 rounded-full">Sumber Alam</span>
+                    </div>
+                    <h4 class="font-extrabold text-base mb-1 text-slate-100">6. Bencana Alam</h4>
+                    <p class="text-xs text-slate-400 leading-relaxed">Debu letusan gunung berapi dan asap dari kebakaran hutan alami pada musim kemarau.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section C, D, & E: Polutan, Alur Paparan & Gangguan -->
+    <section id="polutan" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+        <div class="text-center mb-10">
+            <span class="bg-sky-100 text-sky-800 text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">Bagian C, D, & E</span>
+            <h2 class="text-2xl sm:text-4xl font-black text-slate-900 mt-2">Polutan & Gangguan Pernapasan</h2>
+            <p class="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto mt-2">Pelajari jenis zat berbahaya, alur saat terhirup, dan gejala penyakit yang ditimbulkan.</p>
+        </div>
+
+        <!-- Section C: 5 Jenis Polutan Utama -->
+        <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-md border border-slate-200 mb-10">
+            <h3 class="text-xl font-extrabold text-slate-900 mb-6 flex items-center gap-2">
+                <i class="fa-solid fa-biohazard text-amber-500"></i> 5 Jenis Polutan Berbahaya Bagi Paru-Paru
+            </h3>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+                <div class="bg-slate-50 border border-slate-200 p-4 rounded-2xl hover:border-amber-400 transition-colors">
+                    <div class="text-amber-500 text-2xl mb-2"><i class="fa-solid fa-dust"></i></div>
+                    <h4 class="font-bold text-slate-900 text-sm mb-1">1. Partikel Debu</h4>
+                    <p class="text-xs text-slate-600">Masuk ke hidung dan tenggorokan, memicu iritasi dan rasa gatal.</p>
+                </div>
+                <div class="bg-slate-50 border border-slate-200 p-4 rounded-2xl hover:border-amber-400 transition-colors">
+                    <div class="text-rose-500 text-2xl mb-2"><i class="fa-solid fa-microscope"></i></div>
+                    <h4 class="font-bold text-slate-900 text-sm mb-1">2. Partikel Halus</h4>
+                    <p class="text-xs text-slate-600">Ukurannya mikroskopis, dapat menembus hingga alveolus bagian dalam.</p>
+                </div>
+                <div class="bg-slate-50 border border-slate-200 p-4 rounded-2xl hover:border-amber-400 transition-colors">
+                    <div class="text-red-500 text-2xl mb-2"><i class="fa-solid fa-smoking"></i></div>
+                    <h4 class="font-bold text-slate-900 text-sm mb-1">3. Asap Rokok</h4>
+                    <p class="text-xs text-slate-600">Mengandung ribuan bahan kimia racun pemicu kerusakan sel organ.</p>
+                </div>
+                <div class="bg-slate-50 border border-slate-200 p-4 rounded-2xl hover:border-amber-400 transition-colors">
+                    <div class="text-sky-500 text-2xl mb-2"><i class="fa-solid fa-truck-monster"></i></div>
+                    <h4 class="font-bold text-slate-900 text-sm mb-1">4. Asap Kendaraan</h4>
+                    <p class="text-xs text-slate-600">Menghasilkan gas Karbon Monoksida dan emisi berbahaya jalan raya.</p>
+                </div>
+                <div class="bg-slate-50 border border-slate-200 p-4 rounded-2xl hover:border-amber-400 transition-colors">
+                    <div class="text-orange-500 text-2xl mb-2"><i class="fa-solid fa-fire-burner"></i></div>
+                    <h4 class="font-bold text-slate-900 text-sm mb-1">5. Asap Pembakaran</h4>
+                    <p class="text-xs text-slate-600">Asap pekat dari sampah atau kayu yang menyesakkan dada.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section D: Alur Paparan Interaktif -->
+        <div class="bg-gradient-to-r from-sky-900 to-slate-900 text-white rounded-3xl p-6 sm:p-8 shadow-xl mb-10">
+            <h3 class="text-xl font-extrabold mb-2 text-sky-300 flex items-center gap-2">
+                <i class="fa-solid fa-diagram-project"></i> Alur Masuknya Polutan ke Dalam Tubuh
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-300 mb-6">Klik langkah di bawah ini untuk melihat alur bertahap:</p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-5 gap-3 relative">
+                <div class="bg-white/10 backdrop-blur-sm border border-white/10 p-4 rounded-2xl text-center flex flex-col items-center justify-between">
+                    <span class="w-8 h-8 rounded-full bg-sky-500 font-bold text-xs flex items-center justify-center mb-2">1</span>
+                    <h4 class="font-extrabold text-sm mb-1">Udara Tercemar</h4>
+                    <p class="text-[11px] text-slate-300">Lingkungan dipenuhi asap & debu.</p>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur-sm border border-white/10 p-4 rounded-2xl text-center flex flex-col items-center justify-between">
+                    <span class="w-8 h-8 rounded-full bg-sky-500 font-bold text-xs flex items-center justify-center mb-2">2</span>
+                    <h4 class="font-extrabold text-sm mb-1">Terhirup Bernapas</h4>
+                    <p class="text-[11px] text-slate-300">Masuk melalui hidung/mulut.</p>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur-sm border border-white/10 p-4 rounded-2xl text-center flex flex-col items-center justify-between">
+                    <span class="w-8 h-8 rounded-full bg-sky-500 font-bold text-xs flex items-center justify-center mb-2">3</span>
+                    <h4 class="font-extrabold text-sm mb-1">Terpapar Saluran</h4>
+                    <p class="text-[11px] text-slate-300">Menempel di tenggorokan & paru.</p>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur-sm border border-white/10 p-4 rounded-2xl text-center flex flex-col items-center justify-between">
+                    <span class="w-8 h-8 rounded-full bg-amber-500 font-bold text-xs flex items-center justify-center mb-2">4</span>
+                    <h4 class="font-extrabold text-sm mb-1">Peradangan</h4>
+                    <p class="text-[11px] text-amber-200">Iritasi atau jaringan membengkak.</p>
+                </div>
+
+                <div class="bg-rose-500/20 border border-rose-400 p-4 rounded-2xl text-center flex flex-col items-center justify-between">
+                    <span class="w-8 h-8 rounded-full bg-rose-600 font-bold text-xs flex items-center justify-center mb-2">5</span>
+                    <h4 class="font-extrabold text-sm mb-1 text-rose-300">Gejala Sakit</h4>
+                    <p class="text-[11px] text-rose-200">Batuk, sesak, mengi & ISPA.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section E & F: 4 Gangguan Pernapasan Utama (Interactive Accordions / Cards) -->
+        <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-md border border-slate-200">
+            <h3 class="text-xl font-extrabold text-slate-900 mb-6 flex items-center gap-2">
+                <i class="fa-solid fa-notes-medical text-rose-600"></i> 4 Gangguan Pernapasan Akibat Polusi
+            </h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Gangguan 1 -->
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 hover:border-amber-400 transition-all">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center font-bold text-lg">
+                            <i class="fa-solid fa-head-side-cough"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-extrabold text-slate-900 text-lg">1. Iritasi Saluran Pernapasan</h4>
+                            <span class="text-xs font-semibold text-slate-500">Dampak Langsung Polutan</span>
+                        </div>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-600 mb-3 leading-relaxed">
+                        Reaksi paling umum saat tenggorokan dan hidung terpapar debu atau asap.
+                    </p>
+                    <div class="bg-white p-3 rounded-xl border border-slate-200">
+                        <span class="text-xs font-bold text-amber-700 block mb-1"><i class="fa-solid fa-triangle-exclamation mr-1"></i> Gejala Umum:</span>
+                        <p class="text-xs text-slate-700">Batuk-batuk, tenggorokan gatal/kering, hidung bersin & berair, rasa tidak nyaman saat bernapas.</p>
+                    </div>
+                </div>
+
+                <!-- Gangguan 2 -->
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 hover:border-rose-400 transition-all">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center font-bold text-lg">
+                            <i class="fa-solid fa-lungs"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-extrabold text-slate-900 text-lg">2. Asma (Kambuh Akibat Polusi)</h4>
+                            <span class="text-xs font-semibold text-slate-500">Penyempitan Saluran Napas</span>
+                        </div>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-600 mb-3 leading-relaxed">
+                        Kondisi ketika saluran bernapas menyempit dan membengkak. Polusi udara menjadi pemicu utama kekambuhan.
+                    </p>
+                    <div class="bg-white p-3 rounded-xl border border-slate-200">
+                        <span class="text-xs font-bold text-rose-700 block mb-1"><i class="fa-solid fa-triangle-exclamation mr-1"></i> Gejala Utama:</span>
+                        <p class="text-xs text-slate-700">Sesak napas hebat, batuk malam/pagi hari, serta suara bernapas berbunyi mengi ("ngik-ngik").</p>
+                    </div>
+                </div>
+
+                <!-- Gangguan 3 -->
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 hover:border-sky-400 transition-all">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 rounded-xl bg-sky-100 text-sky-600 flex items-center justify-center font-bold text-lg">
+                            <i class="fa-solid fa-virus"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-extrabold text-slate-900 text-lg">3. Infeksi Saluran Pernapasan (ISPA)</h4>
+                            <span class="text-xs font-semibold text-slate-500">Diperburuk oleh Udara Kotor</span>
+                        </div>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-600 mb-3 leading-relaxed">
+                        Infeksi virus/bakteri. Udara buruk melemahkan pertahanan paru-paru sehingga kuman lebih mudah merusak jaringan.
+                    </p>
+                    <div class="bg-white p-3 rounded-xl border border-slate-200">
+                        <span class="text-xs font-bold text-sky-700 block mb-1"><i class="fa-solid fa-triangle-exclamation mr-1"></i> Gejala Utama:</span>
+                        <p class="text-xs text-slate-700">Batuk berdahak, pilek parah, nyeri tenggorokan saat menelan, disertai demam.</p>
+                    </div>
+                </div>
+
+                <!-- Gangguan 4 -->
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 hover:border-teal-400 transition-all">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-10 h-10 rounded-xl bg-teal-100 text-teal-600 flex items-center justify-center font-bold text-lg">
+                            <i class="fa-solid fa-stethoscope"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-extrabold text-slate-900 text-lg">4. Bronkitis</h4>
+                            <span class="text-xs font-semibold text-slate-500">Peradangan Saluran Bronkus</span>
+                        </div>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-600 mb-3 leading-relaxed">
+                        Peradangan dinding pipa bronkus yang menghubungkan tenggorokan ke paru-paru akibat iritasi kronis asap & polusi.
+                    </p>
+                    <div class="bg-white p-3 rounded-xl border border-slate-200">
+                        <span class="text-xs font-bold text-teal-700 block mb-1"><i class="fa-solid fa-triangle-exclamation mr-1"></i> Gejala Utama:</span>
+                        <p class="text-xs text-slate-700">Batuk berlanjut dengan produksi lendir/dahak tebal, nyeri di dada, dan napas pendek.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Catatan Penting Banner -->
+            <div class="mt-6 bg-amber-50 border border-amber-200 rounded-2xl p-4 flex items-start gap-3 text-amber-900 text-xs sm:text-sm">
+                <i class="fa-solid fa-circle-info text-amber-600 text-lg mt-0.5"></i>
+                <p>
+                    <strong>Penting untuk Diingat:</strong> Polusi udara bukan selalu satu-satunya penyebab utama, namun sangat memperburuk kondisi kesehatan. Faktor lain seperti kebersihan, kekebalan tubuh, dan riwayat alergi juga berpengaruh.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section G & H: Laboratorium Simulasi Komparasi Lingkungan -->
+    <section id="simulasi" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+        <div class="bg-gradient-to-br from-emerald-900 via-slate-900 to-teal-950 text-white rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+            <div class="max-w-3xl mb-8">
+                <span class="bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">Laboratorium Sains Interaktif</span>
+                <h2 class="text-2xl sm:text-4xl font-black mt-2">Simulasi Kualitas Udara Lingkungan</h2>
+                <p class="text-slate-300 text-xs sm:text-base mt-2">Geser kontrol di bawah untuk mengatur variabel lingkungan dan perhatikan perubahan skor kebersihan udara serta respons paru-paru!</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <!-- Controls Panel -->
+                <div class="lg:col-span-6 bg-white/10 backdrop-blur-md border border-white/15 p-6 rounded-2xl space-y-5">
+                    <h3 class="font-extrabold text-lg text-emerald-300 border-b border-white/10 pb-2">
+                        <i class="fa-solid fa-sliders mr-2"></i> Pengaturan Variabel Lingkungan
+                    </h3>
+
+                    <!-- Slider 1: Kendaraan -->
+                    <div>
+                        <div class="flex justify-between text-xs font-bold mb-1">
+                            <span>Lalu Lintas Kendaraan:</span>
+                            <span id="sliderVehicleLabel" class="text-amber-300">Sedang (50%)</span>
+                        </div>
+                        <input type="range" id="sliderVehicle" min="0" max="100" value="50" oninput="updateSimulation()" class="w-full accent-emerald-400 bg-slate-700 h-2 rounded-lg cursor-pointer">
+                    </div>
+
+                    <!-- Slider 2: Pepohonan -->
+                    <div>
+                        <div class="flex justify-between text-xs font-bold mb-1">
+                            <span>Jumlah Pepohonan / Tanaman:</span>
+                            <span id="sliderTreesLabel" class="text-emerald-300">Banyak (70%)</span>
+                        </div>
+                        <input type="range" id="sliderTrees" min="0" max="100" value="70" oninput="updateSimulation()" class="w-full accent-emerald-400 bg-slate-700 h-2 rounded-lg cursor-pointer">
+                    </div>
+
+                    <!-- Toggle 3: Pembakaran Sampah -->
+                    <div class="flex items-center justify-between bg-slate-800/60 p-3 rounded-xl border border-white/10">
+                        <span class="text-xs font-bold">Ada Pembakaran Sampah:</span>
+                        <button id="toggleTrash" onclick="toggleTrashOption()" class="bg-rose-600 text-white text-xs font-bold px-3 py-1.5 rounded-lg transition-colors">
+                            Ya (Tercemar)
+                        </button>
+                    </div>
+
+                    <!-- Toggle 4: Ventilasi Kelas/Rumah -->
+                    <div class="flex items-center justify-between bg-slate-800/60 p-3 rounded-xl border border-white/10">
+                        <span class="text-xs font-bold">Ventilasi Ruangan Baik:</span>
+                        <button id="toggleVentilation" onclick="toggleVentilationOption()" class="bg-emerald-600 text-white text-xs font-bold px-3 py-1.5 rounded-lg transition-colors">
+                            Ya (Lancar)
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Live Result Simulation Box -->
+                <div class="lg:col-span-6 bg-white text-slate-900 p-6 rounded-2xl shadow-lg border border-slate-200 text-center">
+                    <span class="text-xs font-bold text-slate-500 uppercase tracking-widest block mb-1">Hasil Simulasi Udara</span>
+                    
+                    <!-- Dynamic AQI Meter -->
+                    <div id="simScoreContainer" class="my-4 p-4 rounded-2xl bg-emerald-50 border border-emerald-200 transition-all">
+                        <div id="simIcon" class="text-5xl text-emerald-600 mb-2">
+                            <i class="fa-solid fa-face-smile"></i>
+                        </div>
+                        <h4 id="simStatusTitle" class="text-2xl font-black text-emerald-800">Udara Bersih & Segar</h4>
+                        <p id="simStatusDesc" class="text-xs sm:text-sm text-emerald-700 mt-1 font-medium">
+                            Aman untuk bernapas! Risiko gangguan pernapasan sangat rendah.
+                        </p>
+                    </div>
+
+                    <!-- Dynamic Healthy Indicator -->
+                    <div class="grid grid-cols-2 gap-3 text-left">
+                        <div class="bg-slate-50 p-3 rounded-xl border border-slate-200">
+                            <span class="text-[10px] font-bold text-slate-400 uppercase block">Tingkat Risiko ISPA</span>
+                            <span id="simRiskText" class="text-sm font-extrabold text-emerald-600">Rendah</span>
+                        </div>
+                        <div class="bg-slate-50 p-3 rounded-xl border border-slate-200">
+                            <span class="text-[10px] font-bold text-slate-400 uppercase block">Kesesuaian Belajar</span>
+                            <span id="simSuitabilityText" class="text-sm font-extrabold text-emerald-600">Sangat Baik</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section I: Tabel Pengamatan Mandiri Siswa -->
+    <section id="observasi" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+        <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-md border border-slate-200">
+            <div class="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-4">
+                <div>
+                    <span class="bg-purple-100 text-purple-800 text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">Bagian I</span>
+                    <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-2">Lembar Observasi Udara Sekitarmu</h2>
+                </div>
+                <p class="text-xs sm:text-sm text-slate-500">Isi kuesioner pengamatan ini untuk menilai kondisi sekolah/rumahmu!</p>
+            </div>
+
+            <form id="observationForm" onsubmit="event.preventDefault(); calculateObservation();" class="space-y-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Item 1 -->
+                    <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200">
+                        <label class="block text-xs font-bold text-slate-800 mb-2">1. Banyak Kendaraan Bermotor Passing:</label>
+                        <select id="obsVehicle" class="w-full bg-white border border-slate-300 rounded-xl px-3 py-2 text-xs sm:text-sm font-medium focus:ring-2 focus:ring-emerald-500 outline-none">
+                            <option value="1">Sedikit</option>
+                            <option value="2">Sedang</option>
+                            <option value="3">Sangat Banyak</option>
+                        </select>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200">
+                        <label class="block text-xs font-bold text-slate-800 mb-2">2. Keberadaan Debu di Ruangan/Jalan:</label>
+                        <select id="obsDust" class="w-full bg-white border border-slate-300 rounded-xl px-3 py-2 text-xs sm:text-sm font-medium focus:ring-2 focus:ring-emerald-500 outline-none">
+                            <option value="1">Hampir Tidak Ada</option>
+                            <option value="2">Sedikit Debu</option>
+                            <option value="3">Banyak Debu Tebal</option>
+                        </select>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200">
+                        <label class="block text-xs font-bold text-slate-800 mb-2">3. Aktivitas Pembakaran Sampah:</label>
+                        <select id="obsTrash" class="w-full bg-white border border-slate-300 rounded-xl px-3 py-2 text-xs sm:text-sm font-medium focus:ring-2 focus:ring-emerald-500 outline-none">
+                            <option value="1">Tidak Ada Pembakaran</option>
+                            <option value="3">Ada Asap Pembakaran Sampah</option>
+                        </select>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200">
+                        <label class="block text-xs font-bold text-slate-800 mb-2">4. Jumlah Pepohonan & Tanaman Rimbun:</label>
+                        <select id="obsTrees" class="w-full bg-white border border-slate-300 rounded-xl px-3 py-2 text-xs sm:text-sm font-medium focus:ring-2 focus:ring-emerald-500 outline-none">
+                            <option value="1">Sangat Banyak & Asri</option>
+                            <option value="2">Sedang</option>
+                            <option value="3">Sangat Sedikit / Gersang</option>
+                        </select>
+                    </div>
+
+                    <!-- Item 5 -->
+                    <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200">
+                        <label class="block text-xs font-bold text-slate-800 mb-2">5. Kondisi Ventilasi Udara (Jendela/Pintu):</label>
+                        <select id="obsVentilation" class="w-full bg-white border border-slate-300 rounded-xl px-3 py-2 text-xs sm:text-sm font-medium focus:ring-2 focus:ring-emerald-500 outline-none">
+                            <option value="1">Sangat Baik (Sirkulasi Lancar)</option>
+                            <option value="2">Cukup Baik</option>
+                            <option value="3">Kurang Baik (Pengap)</option>
+                        </select>
+                    </div>
+
+                    <!-- Item 6 -->
+                    <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200">
+                        <label class="block text-xs font-bold text-slate-800 mb-2">6. Aroma / Bau Menyengat:</label>
+                        <select id="obsSmell" class="w-full bg-white border border-slate-300 rounded-xl px-3 py-2 text-xs sm:text-sm font-medium focus:ring-2 focus:ring-emerald-500 outline-none">
+                            <option value="1">Tidak Ada Bau</option>
+                            <option value="3">Ada Bau Menyengat / Asap</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="text-center pt-2">
+                    <button type="submit" class="bg-purple-600 hover:bg-purple-700 text-white font-bold px-8 py-3 rounded-2xl shadow-md transition-all hover:scale-105 text-sm">
+                        <i class="fa-solid fa-magnifying-glass-chart mr-2"></i> Hitung Kesimpulan Observasi
+                    </button>
+                </div>
+            </form>
+
+            <!-- Observation Result Banner -->
+            <div id="obsResult" class="hidden mt-6 p-5 rounded-2xl border text-center transition-all">
+                <!-- Dynamically filled by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Section J & K: Sebab-Akibat & Mitigasi -->
+    <section id="mitigasi" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+        <div class="text-center mb-10">
+            <span class="bg-emerald-100 text-emerald-800 text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">Bagian J & K</span>
+            <h2 class="text-2xl sm:text-4xl font-black text-slate-900 mt-2">Langkah Mitigasi Nyata</h2>
+            <p class="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto mt-2">Tindakan pencegahan konkret yang dapat dilakukan oleh murid di sekolah dan rumah.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Mitigation at School -->
+            <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-md border border-slate-200 flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center font-extrabold text-xl">
+                            <i class="fa-solid fa-school"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-black text-xl text-slate-900">Aksi di Sekolah</h3>
+                            <span class="text-xs text-emerald-600 font-bold">Menjaga Lingkungan Belajar</span>
+                        </div>
+                    </div>
+
+                    <ul class="space-y-3 text-xs sm:text-sm text-slate-700 font-medium">
+                        <li class="flex items-start gap-2.5 bg-emerald-50/50 p-2.5 rounded-xl border border-emerald-100">
+                            <i class="fa-solid fa-circle-check text-emerald-600 mt-1"></i>
+                            <span>Dilarang keras membakar sampah di kawasan sekolah.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5 bg-emerald-50/50 p-2.5 rounded-xl border border-emerald-100">
+                            <i class="fa-solid fa-circle-check text-emerald-600 mt-1"></i>
+                            <span>Menanam dan merawat tanaman hias/pohon di halaman kelas.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5 bg-emerald-50/50 p-2.5 rounded-xl border border-emerald-100">
+                            <i class="fa-solid fa-circle-check text-emerald-600 mt-1"></i>
+                            <span>Membuka ventilasi dan jendela kelas setiap pagi.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5 bg-emerald-50/50 p-2.5 rounded-xl border border-emerald-100">
+                            <i class="fa-solid fa-circle-check text-emerald-600 mt-1"></i>
+                            <span>Menjaga kawasan sekolah 100% bebas dari asap rokok.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Mitigation at Home -->
+            <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-md border border-slate-200 flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-sky-100 text-sky-600 flex items-center justify-center font-extrabold text-xl">
+                            <i class="fa-solid fa-house-user"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-black text-xl text-slate-900">Aksi di Rumah</h3>
+                            <span class="text-xs text-sky-600 font-bold">Menjaga Kebersihan Keluarga</span>
+                        </div>
+                    </div>
+
+                    <ul class="space-y-3 text-xs sm:text-sm text-slate-700 font-medium">
+                        <li class="flex items-start gap-2.5 bg-sky-50/50 p-2.5 rounded-xl border border-sky-100">
+                            <i class="fa-solid fa-circle-check text-sky-600 mt-1"></i>
+                            <span>Mengolah sampah organik (kompos) tanpa dibakar.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5 bg-sky-50/50 p-2.5 rounded-xl border border-sky-100">
+                            <i class="fa-solid fa-circle-check text-sky-600 mt-1"></i>
+                            <span>Rutin mengelap debu perabotan rumah dengan kain basah.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5 bg-sky-50/50 p-2.5 rounded-xl border border-sky-100">
+                            <i class="fa-solid fa-circle-check text-sky-600 mt-1"></i>
+                            <span>Menggunakan masker saat berada di jalan raya berdebu.</span>
+                        </li>
+                        <li class="flex items-start gap-2.5 bg-sky-50/50 p-2.5 rounded-xl border border-sky-100">
+                            <i class="fa-solid fa-circle-check text-sky-600 mt-1"></i>
+                            <span>Menjauhi paparan asap rokok dan kendaraan bermotor.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Class Quiz Section -->
+    <section id="kuis" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
+        <div class="bg-gradient-to-br from-amber-500 via-orange-500 to-red-500 text-white rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+            <div class="text-center mb-8">
+                <span class="bg-white/20 backdrop-blur-md text-white font-extrabold text-xs px-4 py-1.5 rounded-full border border-white/30 uppercase tracking-widest">
+                    <i class="fa-solid fa-trophy mr-1.5 text-yellow-300"></i> Evaluasi Pemahaman Murid
+                </span>
+                <h2 class="text-2xl sm:text-4xl font-black mt-3">Kuis Interaktif IPAS Kelas 6</h2>
+                <p class="text-amber-100 text-xs sm:text-base mt-2">Jawab 5 pertanyaan di bawah ini untuk menguji pemahamanmu!</p>
+            </div>
+
+            <!-- Quiz Container Card -->
+            <div class="bg-white text-slate-900 rounded-2xl p-6 sm:p-8 shadow-xl max-w-3xl mx-auto">
+                <div id="quizContainer">
+                    <!-- Dynamic Question Area -->
+                    <div class="flex items-center justify-between text-xs font-bold text-slate-400 mb-4 pb-2 border-b border-slate-100">
+                        <span id="quizProgressText">Pertanyaan 1 dari 5</span>
+                        <span id="quizScoreBadge" class="bg-amber-100 text-amber-800 px-2.5 py-1 rounded-lg">Skor: 0</span>
+                    </div>
+
+                    <h3 id="quizQuestion" class="text-base sm:text-lg font-black text-slate-900 mb-6 leading-snug">
+                        <!-- Filled by JS -->
+                    </h3>
+
+                    <div id="quizOptions" class="space-y-3 mb-6">
+                        <!-- Options filled by JS -->
+                    </div>
+
+                    <div id="quizFeedback" class="hidden p-4 rounded-xl text-xs sm:text-sm font-bold mb-4">
+                        <!-- Feedback filled by JS -->
+                    </div>
+
+                    <button id="quizNextBtn" onclick="nextQuestion()" class="hidden w-full bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold py-3 rounded-xl transition-all shadow-md">
+                        Pertanyaan Selanjutnya <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
+
+                <!-- Quiz Completion Screen -->
+                <div id="quizResultScreen" class="hidden text-center py-6">
+                    <div class="w-20 h-20 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center text-4xl mx-auto mb-4">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <h3 class="text-2xl font-black text-slate-900 mb-2">Selamat! Kuis Selesai!</h3>
+                    <p class="text-sm text-slate-600 mb-4">Skor Akhir Kamu:</p>
+                    <div id="finalScore" class="text-5xl font-black text-amber-600 mb-6">0 / 100</div>
+                    <button onclick="restartQuiz()" class="bg-amber-500 hover:bg-amber-600 text-white font-bold px-6 py-3 rounded-xl transition-all shadow-md">
+                        <i class="fa-solid fa-rotate-right mr-2"></i> Coba Kuis Lagi
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-10 border-t border-slate-800 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs sm:text-sm space-y-3">
+            <div class="flex items-center justify-center gap-2 text-white font-bold text-base">
+                <i class="fa-solid fa-wind text-emerald-400"></i> Media Pembelajaran IPAS Kelas 6
+            </div>
+            <p>Materi Pembelajaran Kurikulum Merdeka • Fase C SD/MI</p>
+            <p class="text-slate-500 text-[11px]">Didesain secara interaktif untuk pembelajaran efektif di kelas dan mandiri.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        // Simulation State
+        let trashBurning = true;
+        let goodVentilation = true;
+
+        function updateSimulation() {
+            const vehicleVal = parseInt(document.getElementById('sliderVehicle').value);
+            const treesVal = parseInt(document.getElementById('sliderTrees').value);
+
+            // Update Labels
+            document.getElementById('sliderVehicleLabel').innerText = vehicleVal < 33 ? 'Sedikit' : vehicleVal < 66 ? 'Sedang' : 'Sangat Banyak';
+            document.getElementById('sliderTreesLabel').innerText = treesVal < 33 ? 'Sedikit' : treesVal < 66 ? 'Sedang' : 'Sangat Banyak';
+
+            // Calculate Score (0 - 100)
+            // Higher is cleaner air
+            let score = 100;
+            score -= (vehicleVal * 0.4); // vehicle impact
+            score += (treesVal * 0.3); // trees positive impact
+            if (trashBurning) score -= 25;
+            if (!goodVentilation) score -= 15;
+
+            score = Math.max(0, Math.min(100, Math.round(score)));
+
+            // Update UI elements
+            const container = document.getElementById('simScoreContainer');
+            const icon = document.getElementById('simIcon');
+            const title = document.getElementById('simStatusTitle');
+            const desc = document.getElementById('simStatusDesc');
+            const riskText = document.getElementById('simRiskText');
+            const suitText = document.getElementById('simSuitabilityText');
+
+            if (score >= 70) {
+                container.className = "my-4 p-4 rounded-2xl bg-emerald-50 border border-emerald-200 transition-all";
+                icon.className = "text-5xl text-emerald-600 mb-2";
+                icon.innerHTML = '<i class="fa-solid fa-face-smile"></i>';
+                title.className = "text-2xl font-black text-emerald-800";
+                title.innerText = "Udara Bersih & Segar (" + score + "/100)";
+                desc.innerText = "Aman untuk bernapas! Risiko gangguan pernapasan sangat rendah.";
+                riskText.innerText = "Sangat Rendah";
+                riskText.className = "text-sm font-extrabold text-emerald-600";
+                suitText.innerText = "Sangat Baik";
+                suitText.className = "text-sm font-extrabold text-emerald-600";
+            } else if (score >= 40) {
+                container.className = "my-4 p-4 rounded-2xl bg-amber-50 border border-amber-200 transition-all";
+                icon.className = "text-5xl text-amber-500 mb-2";
+                icon.innerHTML = '<i class="fa-solid fa-face-meh"></i>';
+                title.className = "text-2xl font-black text-amber-800";
+                title.innerText = "Udara Sedang / Perlu Perhatian (" + score + "/100)";
+                desc.innerText = "Terdapat sedikit polusi. Anak dengan penyakit asma perlu waspada.";
+                riskText.innerText = "Sedang";
+                riskText.className = "text-sm font-extrabold text-amber-600";
+                suitText.innerText = "Cukup Baik";
+                suitText.className = "text-sm font-extrabold text-amber-600";
+            } else {
+                container.className = "my-4 p-4 rounded-2xl bg-rose-50 border border-rose-200 transition-all";
+                icon.className = "text-5xl text-rose-600 mb-2";
+                icon.innerHTML = '<i class="fa-solid fa-face-frown"></i>';
+                title.className = "text-2xl font-black text-rose-800";
+                title.innerText = "Udara Tercemar / Berbahaya (" + score + "/100)";
+                desc.innerText = "Berisiko memicu iritasi tenggorokan, batuk, dan serangan asma!";
+                riskText.innerText = "Tinggi (Tercemar)";
+                riskText.className = "text-sm font-extrabold text-rose-600";
+                suitText.innerText = "Kurang Sehat";
+                suitText.className = "text-sm font-extrabold text-rose-600";
+            }
+        }
+
+        function toggleTrashOption() {
+            trashBurning = !trashBurning;
+            const btn = document.getElementById('toggleTrash');
+            if (trashBurning) {
+                btn.innerText = "Ya (Tercemar)";
+                btn.className = "bg-rose-600 text-white text-xs font-bold px-3 py-1.5 rounded-lg transition-colors";
+            } else {
+                btn.innerText = "Tidak Ada Sampah Dibakar";
+                btn.className = "bg-emerald-600 text-white text-xs font-bold px-3 py-1.5 rounded-lg transition-colors";
+            }
+            updateSimulation();
+        }
+
+        function toggleVentilationOption() {
+            goodVentilation = !goodVentilation;
+            const btn = document.getElementById('toggleVentilation');
+            if (goodVentilation) {
+                btn.innerText = "Ya (Lancar)";
+                btn.className = "bg-emerald-600 text-white text-xs font-bold px-3 py-1.5 rounded-lg transition-colors";
+            } else {
+                btn.innerText = "Kurang (Pengap)";
+                btn.className = "bg-amber-600 text-white text-xs font-bold px-3 py-1.5 rounded-lg transition-colors";
+            }
+            updateSimulation();
+        }
+
+        function calculateObservation() {
+            const v = parseInt(document.getElementById('obsVehicle').value);
+            const d = parseInt(document.getElementById('obsDust').value);
+            const t = parseInt(document.getElementById('obsTrash').value);
+            const tr = parseInt(document.getElementById('obsTrees').value);
+            const ve = parseInt(document.getElementById('obsVentilation').value);
+            const s = parseInt(document.getElementById('obsSmell').value);
+
+            const totalScore = v + d + t + tr + ve + s;
+            const resultBox = document.getElementById('obsResult');
+            resultBox.classList.remove('hidden');
+
+            if (totalScore <= 8) {
+                resultBox.className = "mt-6 p-5 rounded-2xl border border-emerald-200 bg-emerald-50 text-emerald-900 text-center";
+                resultBox.innerHTML = `
+                    <h4 class="font-extrabold text-lg mb-1"><i class="fa-solid fa-circle-check text-emerald-600 mr-2"></i>Kondisi Udara Lingkungan: RELATIF BAIK</h4>
+                    <p class="text-xs sm:text-sm">Lingkungan sekitar memiliki sirkulasi baik dan polutan yang rendah. Pertahankan keberadaan pepohonan!</p>
+                `;
+            } else if (totalScore <= 13) {
+                resultBox.className = "mt-6 p-5 rounded-2xl border border-amber-200 bg-amber-50 text-amber-900 text-center";
+                resultBox.innerHTML = `
+                    <h4 class="font-extrabold text-lg mb-1"><i class="fa-solid fa-triangle-exclamation text-amber-600 mr-2"></i>Kondisi Udara Lingkungan: PERLU DIPERBAIKI</h4>
+                    <p class="text-xs sm:text-sm">Terdapat beberapa sumber polusi ringan. Disarankan menambah tanaman dan memastikan ventilasi kelas selalu terbuka.</p>
+                `;
+            } else {
+                resultBox.className = "mt-6 p-5 rounded-2xl border border-rose-200 bg-rose-50 text-rose-900 text-center";
+                resultBox.innerHTML = `
+                    <h4 class="font-extrabold text-lg mb-1"><i class="fa-solid fa-circle-xmark text-rose-600 mr-2"></i>Kondisi Udara Lingkungan: PERLU PERHATIAN KHUSUS</h4>
+                    <p class="text-xs sm:text-sm">Tingkat asap atau debu di lokasi pengamatan cukup tinggi. Gunakan masker dan hentikan kegiatan pembakaran sampah!</p>
+                `;
+            }
+        }
+
+        const quizData = [
+            {
+                q: "1. Apa yang dimaksud dengan kualitas udara?",
+                options: [
+                    "A. Suhu udara di siang dan malam hari",
+                    "B. Gambaran kondisi udara berdasarkan kandungan zat di dalamnya",
+                    "C. Kecepatan angin yang bertiup di sekitar kita",
+                    "D. Kelembapan udara di musim hujan"
+                ],
+                answer: 1,
+                explanation: "Kualitas udara menggambarkan kondisi udara berdasarkan kandungan zat atau partikel polutan di dalamnya."
+            },
+            {
+                q: "2. Manakah yang MERUPAKAN contoh sumber pencemaran udara dari kegiatan rumah tangga?",
+                options: [
+                    "A. Kebakaran hutan alami",
+                    "B. Pembakaran sampah plastik di pekarangan",
+                    "C. Debu letusan gunung berapi",
+                    "D. Emisi gas dari cerobong pabrik besar"
+                ],
+                answer: 1,
+                explanation: "Pembakaran sampah secara sembarangan di pekarangan rumah merupakan sumber polusi dari aktivitas rumah tangga."
+            },
+            {
+                q: "3. Penyakit pernapasan yang ditandai dengan penyempitan saluran napas dan bunyi mengi disebut...",
+                options: [
+                    "A. Bronkitis",
+                    "B. Asma",
+                    "C. Influenza",
+                    "D. Diare"
+                ],
+                answer: 1,
+                explanation: "Asma adalah penyempitan saluran pernapasan yang sering dipicu oleh asap, debu, atau polusi udara."
+            },
+            {
+                q: "4. Partikel debu yang sangat halus (mikro) sangat berbahaya karena...",
+                options: [
+                    "A. Langsung hilang saat bernapas",
+                    "B. Dapat masuk lebih jauh menembus bagian dalam paru-paru (alveolus)",
+                    "C. Membuat udara terasa harum",
+                    "D. Hanya menempel di kulit luar"
+                ],
+                answer: 1,
+                explanation: "Karena ukurannya yang sangat kecil, partikel halus dapat lolos dari saringan hidung dan masuk hingga alveolus."
+            },
+            {
+                q: "5. Langkah mitigasi yang TEPAT dilakukan oleh murid di lingkungan sekolah adalah...",
+                options: [
+                    "A. Membakar sampah daun di halaman sekolah",
+                    "B. Menutup semua ventilasi jendela kelas rapat-rapat",
+                    "C. Menanam dan merawat tanaman hijau di sekitar kelas",
+                    "D. Menggunakan kendaraan bermotor untuk jarak sangat dekat"
+                ],
+                answer: 2,
+                explanation: "Menanam tanaman dan menjaga sirkulasi udara adalah aksi nyata murid dalam menjaga kebersihan udara sekolah."
+            }
+        ];
+
+        let currentQIndex = 0;
+        let currentScore = 0;
+        let answered = false;
+
+        function loadQuestion() {
+            answered = false;
+            const q = quizData[currentQIndex];
+            document.getElementById('quizProgressText').innerText = `Pertanyaan ${currentQIndex + 1} dari ${quizData.length}`;
+            document.getElementById('quizScoreBadge').innerText = `Skor: ${currentScore}`;
+            document.getElementById('quizQuestion').innerText = q.q;
+
+            const optionsContainer = document.getElementById('quizOptions');
+            optionsContainer.innerHTML = '';
+
+            q.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = "w-full text-left p-3.5 rounded-xl border border-slate-200 hover:border-amber-400 hover:bg-amber-50/50 transition-all text-xs sm:text-sm font-semibold text-slate-800 flex items-center justify-between";
+                btn.innerText = opt;
+                btn.onclick = () => checkAnswer(idx, btn);
+                optionsContainer.appendChild(btn);
+            });
+
+            document.getElementById('quizFeedback').className = "hidden p-4 rounded-xl text-xs sm:text-sm font-bold mb-4";
+            document.getElementById('quizNextBtn').classList.add('hidden');
+        }
+
+        function checkAnswer(selectedIdx, btnElement) {
+            if (answered) return;
+            answered = true;
+
+            const q = quizData[currentQIndex];
+            const feedback = document.getElementById('quizFeedback');
+            feedback.classList.remove('hidden');
+
+            const allBtns = document.getElementById('quizOptions').children;
+            for (let b of allBtns) {
+                b.disabled = true;
+            }
+
+            if (selectedIdx === q.answer) {
+                currentScore += 20;
+                btnElement.className = "w-full text-left p-3.5 rounded-xl border-2 border-emerald-500 bg-emerald-50 text-emerald-900 font-bold text-xs sm:text-sm flex items-center justify-between";
+                feedback.className = "p-4 rounded-xl text-xs sm:text-sm font-bold mb-4 bg-emerald-100 text-emerald-900 border border-emerald-300";
+                feedback.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-600 mr-2"></i> Benar! ${q.explanation}`;
+            } else {
+                btnElement.className = "w-full text-left p-3.5 rounded-xl border-2 border-rose-500 bg-rose-50 text-rose-900 font-bold text-xs sm:text-sm flex items-center justify-between";
+                allBtns[q.answer].className = "w-full text-left p-3.5 rounded-xl border-2 border-emerald-500 bg-emerald-50 text-emerald-900 font-bold text-xs sm:text-sm flex items-center justify-between";
+                feedback.className = "p-4 rounded-xl text-xs sm:text-sm font-bold mb-4 bg-rose-100 text-rose-900 border border-rose-300";
+                feedback.innerHTML = `<i class="fa-solid fa-circle-xmark text-rose-600 mr-2"></i> Kurang Tepat. ${q.explanation}`;
+            }
+
+            document.getElementById('quizScoreBadge').innerText = `Skor: ${currentScore}`;
+            document.getElementById('quizNextBtn').classList.remove('hidden');
+        }
+
+        function nextQuestion() {
+            currentQIndex++;
+            if (currentQIndex < quizData.length) {
+                loadQuestion();
+            } else {
+                showQuizResults();
+            }
+        }
+
+        function showQuizResults() {
+            document.getElementById('quizContainer').classList.add('hidden');
+            document.getElementById('quizResultScreen').classList.remove('hidden');
+            document.getElementById('finalScore').innerText = `${currentScore} / 100`;
+        }
+
+        function restartQuiz() {
+            currentQIndex = 0;
+            currentScore = 0;
+            document.getElementById('quizResultScreen').classList.add('hidden');
+            document.getElementById('quizContainer').classList.remove('hidden');
+            loadQuestion();
+        }
+
+        // Initialize on load
+        window.onload = function() {
+            updateSimulation();
+            loadQuestion();
+        };
+    </script>
+</body>
+</html>
